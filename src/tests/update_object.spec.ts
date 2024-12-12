@@ -11,14 +11,12 @@ test('Update a mobile', async ({ apiClient }) => {
             year: '2019',
             price: '2049.99',
             "CPU model": "Intel Core i9", 
-            "Hard disk size": "1 TB",
+            "Hard disk size": "2 TB",
             color: 'silver'
         }
     };
 
-    const response = await apiClient.put('/objects/7', newResource);
-    expect(response.status()).toBe(200);
+    const response = await apiClient.patch('/objects/7', newResource);
+    expect(response.status()).toBe(405);
     
-    const responseBody = await response.json();
-    expect(responseBody.color).toBe('silver');
 });

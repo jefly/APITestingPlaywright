@@ -32,6 +32,12 @@ export class ApiClient {
         return response;
     }
 
+    async patch(endpoint: string, data: any) {
+        const url = this.buildUrl(endpoint);
+        const response = await this.apiContext.patch(url, { data });
+        return response;
+    }
+
     async delete(endpoint: string) {
         const url = this.buildUrl(endpoint);
         const response = await this.apiContext.delete(url);
