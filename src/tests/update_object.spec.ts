@@ -16,7 +16,7 @@ test('Update a mobile', async ({ apiClient }) => {
         }
     };
 
-    const response = await apiClient.patch('/objects/7', newResource);
+    const response = await apiClient.put('/objects/7', newResource);
     expect(response.status()).toBe(405);
     
 });
